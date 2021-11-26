@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="468.0" prefWidth="885.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <right>
+      <VBox prefHeight="375.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Стрелки">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label text="Цвет стрелок">
+               <VBox.margin>
+                  <Insets left="11.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+            <ColorPicker fx:id="ColPic">
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+               <value>
+                  <Color red="0.15789473056793213" green="0.1520467847585678" blue="0.1520467847585678" />
+               </value>
+            </ColorPicker>
+            <ListView fx:id="LV" prefHeight="150.0" prefWidth="149.0">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </VBox.margin></ListView>
+         </children>
+      </VBox>
+   </right>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Файл">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#Open" text="Открыть" />
+                  <MenuItem mnemonicParsing="false" onAction="#Save" text="Сохранить" />
+              <MenuItem mnemonicParsing="false" onAction="#Close" text="Закрыть" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Редактирование">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#DelLast" text="Удалить последнее изменение" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <Canvas fx:id="canvas" height="446.0" onMouseDragged="#onBegin" onMouseMoved="#onMm" onMousePressed="#onRun" onMouseReleased="#onEnd" style="-fx-cursor: hand;" width="575.0" BorderPane.alignment="CENTER" />
+   </center>
+   <left>
+      <VBox prefHeight="446.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Указатели">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="5.0" />
+               </VBox.margin>
+            </Label>
+            <ListView fx:id="LVleft" prefHeight="280.0" prefWidth="150.0">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </VBox.margin>
+            </ListView>
+         </children>
+      </VBox>
+   </left>
+</BorderPane>
